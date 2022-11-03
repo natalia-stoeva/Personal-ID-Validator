@@ -5,10 +5,6 @@ const userOutput = document.getElementById("displayContent");
 
 //validate EGN
 const checkEGN = (egnNum) => {
-
-  // if(egnNum.length != 10){
-  //   return false
-  // }
   const weigths = [2,4,8,5,10,9,7,3,6];
   // const year = egnNum.substring(0, 2);
   // const month = egnNum.substring(2, 4);
@@ -40,14 +36,15 @@ const checkEGN = (egnNum) => {
 
 //return EGN information
 const returnEGNinfo = (egn) => {  
-  egn = userInput.value;
+  egn = userInput.value; 
   const validEgn = checkEGN(egn)
-  console.log(validEgn)
 
-  if(!validEgn){
+  console.log(egn.length)
+  if (egn.length != 10){
+    userOutput.innerHTML = `<p>Неправилен формат на ЕГН.</p>`
+    console.log('Please enter a valid EGN')    
+  } else if(!validEgn) {
     userOutput.innerHTML = `<p>ЕГН номерът е невалиден.</p>`
-  } else if (validEgn.length != 10){
-      `<p>Въвели сте невалидно ЕГН. Моля опитайте отново. </p>`
   } else {
       const yearNum = parseInt(egn.substring(0, 2));
       const monthNum = parseInt(egn.substring(2, 4));
@@ -61,35 +58,10 @@ const returnEGNinfo = (egn) => {
       const region = determineRegion(regionNum);
       //display the results
       userOutput.innerHTML = `<p>Лицето е родено на ${day} ${month} през ${year} в региона на ${region} и е от ${sex} пол. </p>`;
-
-  }
-  
-
-  //calculate the year of birth
-  // if(monthBorn > 40){
-  //   monthBorn -= 40;
-  //   yearBorn +=  2000;
-  // } else if(monthBorn > 20){
-  //   monthBorn -= 20;
-  //   yearBorn += 1800;
-  // } else {
-  //   yearBorn += 1900
-  // }
-
-
-
-
-  
-  //gender 
-  // let sex = parseInt(egn.substring(8,9))
-  // if(sex % 2 === 0){
-  //   sex = "мъж"
-  // } else {
-  //   sex = "жена"
-  // }
-
-  
+  } 
+  userInput.value = ""  
 }
+
 
 
 
