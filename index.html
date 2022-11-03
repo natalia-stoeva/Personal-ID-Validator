@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Валидатор на ЕГН</h1>
+    </header>
+
+    <main>
+        <div class="inputs">            
+            <input type="text" id="userInput" minlenght="10" maxlength="10" required>
+            <button type="submit" id="submitBtn" onclick="returnEGNinfo()">Провери</button>            
+        </div>
+
+        <div class="outputs" id="displayContent">
+            
+        </div>
+    </main>
+
+
+    <script src="helpers.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
