@@ -65,7 +65,6 @@ const determineSex = (sex) => {
   return sex;    
 };
 
-
 const determineRegion = (num) => {
     let region
     switch (true) {

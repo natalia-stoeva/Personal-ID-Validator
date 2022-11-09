@@ -6,11 +6,7 @@ const userOutput = document.getElementById("displayContent");
 //validate EGN
 const checkEGN = (egnNum) => {
   const weigths = [2,4,8,5,10,9,7,3,6];
-  // const year = egnNum.substring(0, 2);
-  // const month = egnNum.substring(2, 4);
-  // const day = egnNum.substring(4, 6);
   const checksum = egnNum.substring(9, 10);
-  console.log(checksum + "is the checksum from the string")
 
   let egnsum = 0;
   for(let i = 0; i < weigths.length; i++){    
@@ -23,16 +19,11 @@ const checkEGN = (egnNum) => {
   }
   console.log(validChecksum)
   if (checksum == validChecksum) {
-    // console.log("ЕГН номерът е валиден");
     return true
   } else {
-    // console.log("ЕГН номерът не е валиден");
     return false
   }
 };
-
-// const validEGN = "6101057509"
-// checkEGN(validEGN)
 
 //return EGN information
 const returnEGNinfo = (egn) => {  
@@ -62,11 +53,11 @@ const returnEGNinfo = (egn) => {
   userInput.value = ""  
 }
 
+// const validEGN = "6101057509"
+// checkEGN(validEGN)
 
 
 
-// const myegn = "9406054577"
-// returnEGNinfo(validEGN)
 
 
 
